@@ -1,3 +1,4 @@
+#workflow: 自动化部署到Github Pages
 name: Deploy to GitHub Pages
 
 on:

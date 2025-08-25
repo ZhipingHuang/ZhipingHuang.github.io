@@ -20,7 +20,7 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
+	title: "Ping",
 	subtitle: "生活明朗,万物可爱~_~",
 
 	lang: SITE_LANG,
@@ -68,18 +68,18 @@ export const siteConfig: SiteConfig = {
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
-			interval: 1, // 轮播间隔时间（秒）
+			interval: 3, // 轮播间隔时间（秒）
 		},
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "Mizuki", // 主页横幅主标题
+			title: "Welcome to Dec's Blog", // 主页横幅主标题
 
 			subtitle: [
-				"One demo website",
-				"Carousel Text1",
-				"Carousel Text2",
-				"Carousel Text3",
+				"如果你看到这行文字,说明我已经成功滴吸引到了你!",
+				"所求皆如愿,所行化坦途~",
+				"愿历经千山万水,终与温柔相逢~",
+				"少年知道夏天不会再回来了,我们也不得不承认,青春是本太仓促的书~",
 			], // 主页横幅副标题，支持多文本
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -127,19 +127,19 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
+					url: "https://github.com/ZhipingHuang/ZhipingHuang.github.io",
 					external: true,
 					icon: "fa6-brands:github",
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
+					url: "https://space.bilibili.com/317124405",
 					external: true,
 					icon: "fa6-brands:bilibili",
 				},
 				{
 					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
+					url: "https://gitee.com/zhipinghuang",
 					external: true,
 					icon: "mdi:git",
 				},
@@ -162,21 +162,22 @@ export const navBarConfig: NavBarConfig = {
 			url: "#",
 			icon: "material-symbols:more-horiz",
 			children: [
-				{
-					name: "项目展示",
-					url: "/projects/",
-					icon: "material-symbols:work",
-				},
-				{
-					name: "技能展示",
-					url: "/skills/",
-					icon: "material-symbols:psychology",
-				},
-				{
-					name: "时间线",
-					url: "/timeline/",
-					icon: "material-symbols:timeline",
-				},
+				//dec 2025-08-25 13:35:33 暂时注释
+				//{
+				//	name: "项目展示",
+				//	url: "/projects/",
+				//	icon: "material-symbols:work",
+				//},
+				//{
+				//	name: "技能展示",
+				//	url: "/skills/",
+				//	icon: "material-symbols:psychology",
+				//},
+				//{
+				//	name: "时间线",
+				//	url: "/timeline/",
+				//	icon: "material-symbols:timeline",
+				//},
 			],
 		},
 	],
@@ -184,24 +185,30 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Mizuki",
-	bio: "这是一个描述",
+	name: "Dec",
+	bio: "这个人很神秘,啥都没写.",
 	links: [
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://space.bilibili.com/317124405",
 		},
 		{
 			name: "Gitee",
 			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
+			url: "https://gitee.com/zhipinghuang",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
+			url: "https://github.com/ZhipingHuang/ZhipingHuang.github.io",
 		},
+		{
+			name: "Mail",
+			icon: "mdi:chat",
+			url: "https://wx.mail.qq.com/",
+		},
+
 	],
 	// Umami统计部份，记得在layout插入Umami的head标签
 	umami: {
