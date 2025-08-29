@@ -20,16 +20,18 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 // 定义站点语言
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
+//站点基本信息配置
 export const siteConfig: SiteConfig = {
 	title: "Dec",
 	subtitle: "生活明朗,万物可爱^_^",
 
 	lang: SITE_LANG,
-
+	//主题颜色
 	themeColor: {
 		hue: 210, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 	},
+	//翻译设置
 	translate: {
 		enable: true, // 启用翻译功能
 		service: "client.edge", // 使用 Edge 浏览器翻译服务
@@ -39,6 +41,7 @@ export const siteConfig: SiteConfig = {
 		ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻译时忽略的 CSS 类名
 		ignoreTags: ["script", "style", "code", "pre"], // 翻译时忽略的 HTML 标签
 	},
+	//横幅壁纸设置
 	banner: {
 		enable: true, // 是否启动Banner壁纸模式
 
@@ -99,6 +102,7 @@ export const siteConfig: SiteConfig = {
 			transparentMode: "semifull", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
 		},
 	},
+	//文章目录设置
 	toc: {
 		enable: true, // 启用目录功能
 		depth: 3, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
@@ -112,6 +116,7 @@ export const siteConfig: SiteConfig = {
 		// }
 	],
 };
+//全屏壁纸配置，非Banner模式下生效
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	enable: true, // 启用全屏壁纸功能,非Banner模式下生效
 	src: {
@@ -141,22 +146,29 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	opacity: 0.8, // 壁纸透明度
 	blur: 1, // 背景模糊程度
 };
-
+// 顶部导航栏配置
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
-		LinkPreset.Archive,
+		{
+			name: "归档",
+			url: "",
+			icon: "material-symbols:folder-open",
+			children: [
+				LinkPreset.Archive,
+			],
+		},
 		// 支持自定义导航栏链接,并且支持多级菜单,3.1版本新加
 		{
-			name: "链接",
-			url: "/links/",
+			name: "链接", //一级菜单名称
+			url: "/links/", //一级菜单链接(可选,如果只有子菜单,可以为空)
 			icon: "material-symbols:link",
-			children: [
+			children: [ //二级子菜单
 				{
-					name: "GitHub",
+					name: "GitHub", //二级菜单名称
 					url: "https://github.com/ZhipingHuang",
-					external: true,
-					icon: "fa6-brands:github",
+					external: true, // 是否为外部链接
+					icon: "fa6-brands:github", //菜单图标，支持 Iconify 图标
 				},
 				{
 					name: "Bilibili",
@@ -169,6 +181,12 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://gitee.com/zhipinghuang",
 					external: true,
 					icon: "mdi:git",
+				},
+				{
+					name: "DeepSeek",
+					url: "https://chat.deepseek.com/",
+					external: true,
+					icon: "fa6-brands:waze",
 				},
 			],
 		},
@@ -184,16 +202,19 @@ export const navBarConfig: NavBarConfig = {
 					url: "/albums/",
 					icon: "material-symbols:photo-library",
 				},
+				LinkPreset.Friends,
 			],
 		},
 		{
 			name: "关于",
 			url: "/content/",
 			icon: "material-symbols:info",
-			children: [LinkPreset.About, LinkPreset.Friends],
+			children: [
+				LinkPreset.About, 
+			],
 		},
 		{
-			name: "其他",
+			name: "其它",
 			url: "#",
 			icon: "material-symbols:more-horiz",
 			children: [
@@ -213,16 +234,24 @@ export const navBarConfig: NavBarConfig = {
 				//	url: "/timeline/",
 				//	icon: "material-symbols:timeline",
 				//},
+				{
+					name: "搜索",
+					url: "https://cn.bing.com/",
+					external: true,
+					icon: "material-symbols:search" ,
+				},
 			],
 		},
+		//...更多链接
 	],
 };
-
+//个人资料配置
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.gif", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Dec",
-	bio: "世界很大,一定要去看看",
-	links: [
+	// 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+	avatar: "assets/images/avatar.gif", //头像图片路径
+	name: "Dec", //用户名
+	bio: "世界那么大, 我想去看看", //个人简介
+	links: [ //社交链接
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
@@ -238,55 +267,63 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/ZhipingHuang",
 		},
+		{
+			name: "Mail",
+			icon: "mdi:envelope",
+			url: "https://wx.mail.qq.com/",
+		},
 	],
-	// Umami统计部份，记得在layout插入Umami的head标签
+	// umami统计配置, umami是一个开源的隐私友好型网站流量统计工具
+	//Umami统计部份，记得在layout插入Umami的head标签
 	umami: {
 		enable: true, // 是否显示umami统计
-		shareId: "LCNSx44OrAKzTgLE", //填入共享URL最后面那一串  比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
-		region: "eu", //Umami有两个区域，按需选择即可  比如：https://eu.umami.is 你就填入eu
+		shareId: "LCNSx44OrAKzTgLE", //填入共享URL最后面那一串,比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
+		region: "eu", //Umami有两个区域,按需选择即可,比如:https://eu.umami.is 你就填入eu
 	},
 };
-
+//许可证配置
 export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
 };
-
+//代码块样式配置
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// 注意：某些样式（如背景颜色）已被覆盖，请参阅 astro.config.mjs 文件。
-	// 请选择深色主题，因为此博客主题目前仅支持深色背景
-	theme: "github-dark",
+	//注意:某些样式(如背景颜色)已被覆盖,请参阅 astro.config.mjs文件。
+	//请选择深色主题,因为此博客主题目前仅支持深色背景
+	theme: "github-dark", // 代码块主题,可选值""github-dark" | "one-dark" | "dracula"
 };
-
+//评论配置:通过twikoo实现
 export const commentConfig: CommentConfig = {
-	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	enable: true, // 启用评论功能.当设置为false时,评论组件将不会显示在文章区域.
 	twikoo: {
 		envId: "https://twikoo.zphuang.cn", //twikoo实例地址,通过绑定自己的域名可加速访问
 	},
 };
-
+//公告栏配置
 export const announcementConfig: AnnouncementConfig = {
-	title: "公告栏", // 公告标题
-	content: "欢迎来到我的博客！这是一个示例公告。", // 公告内容
-	closable: false, // 允许用户关闭公告
+	title: "公告栏", //公告标题
+	content: "欢迎来到我的博客！这是一个示例公告。", //公告内容
+	closable: false, //是否允许用户关闭公告
 	link: {
-		enable: true, // 启用链接
-		text: "了解更多", // 链接文本
-		url: "/about/", // 链接 URL
-		external: false, // 内部链接
+		enable: true, //启用链接
+		text: "今日热点", //链接文本
+		//url: "/about/", //链接URL
+		url: "https://top.baidu.com/board", //链接URL
+		external: true, //是否外部链接
 	},
 };
-
+//音乐播放器配置
+//在src/components/widget/MusicPlayer.svelte中配置播放方案
 export const musicPlayerConfig: MusicPlayerConfig = {
 	enable: true, // 启用音乐播放器功能
 };
-
+//页脚配置
 export const footerConfig: FooterConfig = {
-	enable: false, // 是否启用Footer HTML注入功能
+	//直接编辑FooterConfig.html文件来添加备案号等自定义内容
+	enable: false, //是否启用Footer HTML注入功能
 };
 
-// 直接编辑 FooterConfig.html 文件来添加备案号等自定义内容
 
 /**
  * 侧边栏布局配置
@@ -402,7 +439,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 		},
 	},
 };
-
+// 樱花特效配置
 export const sakuraConfig: SakuraConfig = {
 	enable: true, // 默认关闭樱花特效
 	sakuraNum: 21, // 樱花数量
@@ -413,14 +450,14 @@ export const sakuraConfig: SakuraConfig = {
 	},
 	speed: {
 		horizontal: {
-			min: -1.7, // 水平移动速度最小值
-			max: -1.2, // 水平移动速度最大值
+			min: -1.0, // 水平移动速度最小值
+			max: -0.5, // 水平移动速度最大值
 		},
 		vertical: {
-			min: 1.5, // 垂直移动速度最小值
-			max: 2.2, // 垂直移动速度最大值
+			min: 0.5, // 垂直移动速度最小值
+			max: 1.0, // 垂直移动速度最大值
 		},
-		rotation: 0.03, // 旋转速度
+		rotation: 0.02, // 旋转速度
 	},
 	zIndex: 100, // 层级，确保樱花在合适的层级显示
 };
