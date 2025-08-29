@@ -59,8 +59,9 @@ export const siteConfig: SiteConfig = {
 				"/images/albums/Ghibli/Ghibli05.webp",
 				"/images/albums/Ghibli/Ghibli07.webp",
 				"/images/albums/Ghibli/Ghibli08.webp",
+				"/images/albums/Ghibli/banner.webp",
 				"/images/albums/Ghibli/cat.webp",
-				"/assets/desktop-banner/5.webp",
+				"assets/images/banner.webp",
 			], // 桌面横幅图片
 			mobile: [
 				"/assets/mobile-banner/1.webp",
@@ -255,7 +256,7 @@ export const navBarConfig: NavBarConfig = {
 //个人资料配置
 export const profileConfig: ProfileConfig = {
 	// 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	avatar: "assets/images/avatar.gif", //头像图片路径
+	avatar: "assets/images/avatar.webp", //头像图片路径
 	name: "Dec", //用户名
 	bio: "世界那么大, 我想去看看", //个人简介
 	links: [ //社交链接
