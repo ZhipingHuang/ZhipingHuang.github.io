@@ -219,6 +219,11 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:info",
 			children: [
 				LinkPreset.About, 
+				{
+					name: "鸣谢",
+					url: "",
+					icon: "material-symbols:add-reaction-outline-rounded",
+				},
 			],
 		},
 		{

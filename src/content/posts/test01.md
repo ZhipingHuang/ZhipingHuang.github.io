@@ -35,7 +35,7 @@ int main(void){
 ###### 六级标题
 
 ## 图片演示
-![图片](<D:\Program Files (x86)\Typora\TyporaDoc\Pictures\函数指针.png>)
+![碧海之蓝](/../src/assets/anime/bhzl.webp)
 
 ## 表格演示
 例:
@@ -64,7 +64,16 @@ struct Data
 
 注脚演示2[^2]
 
-### 提醒框演示
+## 支持的markdown扩展语法
+
+### 嵌入github仓库卡片
+```markdown
+::github{repo="用户名/仓库名"}
+```
+::github{repo="ZhipingHuang/Blog-BlueArchive"}
+
+### 注意框
+使用 `> [!NOTE]、> [!TIP]、> [!WARNING]`等语法创建美观的注意框
 > [!NOTE]
 > 这是一个注意框~
 
@@ -74,12 +83,25 @@ struct Data
 > [!WARNING]
 > 这是一个提醒
 
-### 嵌入github仓库卡片
-::github{repo="ZhipingHuang/Blog-BlueArchive"}
+### 链接其它文章
+<ul>
+  <li><a href="/posts/markdown-tutorial/">Markdown指南</a></li>
+  <li><a href="/posts/video/">页面中插入视频教程</a></li>
+  <li><a href="/posts/guide/">Blog模板</a></li>
+</ul>
 
 ### 插入视频演示
-
 <iframe width="100%" height="468" src="//player.bilibili.com/player.html?isOutside=true&aid=1453536774&bvid=BV1gi421m7df&cid=1519880345&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+### LaTex公式
+使用`$inline$`和`$$block$$`语法编写LaTeX数学公式
+
+行内公式: $ E = mc^2 $
+
+块级公式: 
+$$ 
+  y = 3x^2 + 4x + 5 
+$$
 
 [^1]: Hello,这是1第一个注脚演示.
 [^2]: Hi,又见面了,这是第2个注脚演示.
