@@ -40,7 +40,7 @@ int main(void){
 ###### 六级标题
 
 ## 图片演示
-![碧蓝之海](/src/assets/anime/blzh.webp)
+![碧蓝之海](./../../assets/anime/blzh.webp)
 
 ## 表格演示
 例:
