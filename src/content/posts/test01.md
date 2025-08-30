@@ -9,11 +9,16 @@ draft: false
 ---
 
 Hello,欢迎来到Obsidian的世界.
+
 这是一个示例文档~
+
 这是你的新仓库。
+
 写点笔记，[[创建链接]]，或者试一试[导入器](https://help.obsidian.md/Plugins/Importer)插件!
 当你准备好了，就将该笔记文件删除，使这个仓库为你所用。
-**Obsidian**是一款优秀的知识==管理软件==.
+
+**Obsidian**是一款优秀的知识<font color=red>管理软件</font>
+
 
 ## 示例
 这是一个C语言示例.
@@ -35,7 +40,7 @@ int main(void){
 ###### 六级标题
 
 ## 图片演示
-![碧海之蓝](/../src/assets/anime/bhzl.webp)
+![碧蓝之海](/../src/assets/anime/blzh.webp)
 
 ## 表格演示
 例:
