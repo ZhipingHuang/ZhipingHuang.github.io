@@ -54,6 +54,7 @@ export const siteConfig: SiteConfig = {
 				//"/assets/desktop-banner/4.webp",
 				//"/assets/desktop-banner/5.webp",
 				//"/assets/desktop-banner/6.webp",
+				
 				"/images/albums/Ghibli/Ghibli01.webp",
 				"/images/albums/Ghibli/Ghibli02.webp",
 				"/images/albums/Ghibli/Ghibli05.webp",
