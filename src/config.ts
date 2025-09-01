@@ -221,8 +221,15 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				LinkPreset.About, 
 				{
+					name: "统计",
+					url: "https://cloud.umami.is/share/LCNSx44OrAKzTgLE/",
+					external: true,
+					icon: "material-symbols:android-cell-4-bar-rounded" ,
+				},
+				{
 					name: "鸣谢",
 					url: "",
+					external: false,
 					icon: "material-symbols:add-reaction-outline-rounded",
 				},
 			],
