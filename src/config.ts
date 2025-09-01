@@ -159,14 +159,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
-		{
-			name: "归档",
-			url: "",
-			icon: "material-symbols:folder-open",
-			children: [
-				LinkPreset.Archive,
-			],
-		},
+		LinkPreset.Archive,
 		// 支持自定义导航栏链接,并且支持多级菜单,3.1版本新加
 		{
 			name: "链接", //一级菜单名称
