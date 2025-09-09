@@ -84,7 +84,7 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "Dec's Blog", // 主页横幅主标题
+			title: "十二月の物语", // 主页横幅主标题
 
 			subtitle: [
 				"你很远, 也很近, 在脑海, 也在心里~",
