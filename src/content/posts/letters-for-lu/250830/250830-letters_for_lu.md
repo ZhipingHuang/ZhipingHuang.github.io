@@ -25,3 +25,17 @@ image: /images/albums/Ghibli/Ghibli01.webp
 >再听一首好听的~也是我最爱听的
 
 <iframe width="100%" height="468" src="//player.bilibili.com/player.html?isOutside=true&aid=829755040&bvid=BV1uu4y197VR&cid=1234518168&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+
+<audio 
+    src="/src/content/posts/letters-for-lu/250830/Bassy.mp3" 
+    autoplay="autoplay" 
+    controls="controls" 
+    loop="loop" 
+    preload="auto">
+    该浏览器不支持音频播放!
+</audio>
+
+
+
+
